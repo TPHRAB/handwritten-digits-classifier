@@ -4,6 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import collections
 from initialize_system import initialize_system
+import tensorflowjs as tfjs
 
 def main():
     # initialize system
@@ -59,7 +60,7 @@ def main():
     result = model.evaluate(x_test, y_test)
     print(result)
 
-    model.save('saved_model') 
+    tfjs.converters.save_keras_model(model, 'saved_model') 
 
 if __name__ == '__main__':
     main()
